@@ -9,9 +9,11 @@ const __dirname = path.dirname(__filename);
 async function setupDatabase() {
   // Create connection without database selected
   const connection = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root'
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "root",
+    database: process.env.DB_NAME || "botanical_db"
   });
 
   try {
