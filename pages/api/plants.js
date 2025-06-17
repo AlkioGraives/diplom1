@@ -2,7 +2,7 @@ import mysql from "mysql2/promise";
 
 export default async function handler(req, res) {
   // Connect using the Railway cloud database URL
-  const db = await mysql.createConnection(process.env.MYSQL_URL);
+  const db = await mysql.createConnection(process.env.MYSQL_URL); //add to do deploy
 
   try {
     const [rows] = await db.execute(
