@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ботанический справочник</title>
-        <link rel="icon" href="/avatar.png" />
+        <link rel="icon" type="image/png" href="/avatar.png" />
       </Head>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#f5f5f5' }}>
         <header className="header" style={{ background: 'linear-gradient(to right, #2f855a, #276749)', color: 'white', padding: '2rem 1rem', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', width: '100%', textAlign: 'center' }}>
