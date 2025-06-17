@@ -28,26 +28,21 @@ export default function Home() {
         <title>Ботанический справочник</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <header className="header" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <img
-            src="/images/avatar.png"
-            alt="Avatar"
-            style={{ width: 48, height: 48, borderRadius: "50%", marginRight: 16 }}
-          />
-          <h1>Ботанический справочник</h1>
-          <div className="search-container">
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#f5f5f5' }}>
+        <header className="header" style={{ background: 'linear-gradient(to right, #2f855a, #276749)', color: 'white', padding: '2rem 1rem', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', width: '100%', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Ботанический справочник</h1>
+          <div className="search-container" style={{ maxWidth: 600, margin: '1.5rem auto', padding: '0 1rem' }}>
             <input
               type="text"
               placeholder="Поиск по названию, роду или виду..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="search-input"
+              style={{ width: '100%', padding: '1rem 1.5rem', fontSize: '1.1rem', border: '2px solid rgba(255,255,255,0.2)', borderRadius: 9999, backgroundColor: 'rgba(255,255,255,0.9)', transition: 'all 0.3s ease' }}
             />
           </div>
         </header>
-
-        <div className="plant-grid">
+        <div className="plant-grid" style={{ maxWidth: 1200, margin: '0 auto', padding: '1.5rem', display: 'grid', gridGap: '1.5rem', width: '100%' }}>
           {filtered.map((plant) => {
             const imagePath = plantData[plant.name_ru];
             
